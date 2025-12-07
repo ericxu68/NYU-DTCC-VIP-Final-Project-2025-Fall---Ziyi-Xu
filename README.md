@@ -20,3 +20,6 @@ To solve this problem, I created a combined workflow that includes:
 3. Automatic SBOM merging with a Python script
 
 This process produces a runtime-aware SBOM. It shows both the static dependencies and the libraries actually used during execution. The result is a more accurate and complete SBOM that improves software supply chain visibility and security.
+
+Here is the link to my VIP notebook for more information:
+https://docs.google.com/document/d/1sJQRFBhFeUVOWWgDRHsyU34iOFVJb6PfPyoQlNio9gk/edit?tab=t.0#heading=h.gjdgxs
