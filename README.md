@@ -23,7 +23,7 @@ To solve this problem, I created a combined workflow that includes:
 
 This process produces a runtime-aware SBOM. It shows both the static dependencies and the libraries actually used during execution. The result is a more accurate and complete SBOM that improves software supply chain visibility and security.
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Script Explanation:**
 
 1. I start the tool and set up the environment
@@ -96,7 +96,7 @@ This gives me a complete view of all dependencies used by the program.
 
 
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Reference:**
 
 Here is the link to my VIP notebook for more information:
