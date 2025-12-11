@@ -43,7 +43,10 @@ This gives me a list of all dependencies that already exist on disk before the p
 ### 3. I capture runtime libraries using strace
 Next, I run the target program under strace to see which files it opens.
 
-Example: strace -f -e trace=file my_program
+Example: 
+```bash
+strace -f -e trace=file my_program
+```
 
 
 I filter the output so I keep only lines with `.so` files. These are the shared libraries loaded at runtime. I save this to `dynamic.log`.
@@ -78,7 +81,10 @@ This gives me a more complete SBOM that includes both static and dynamic depende
 
 ### 6. I finish the workflow
 After the merge step, the script prints a message and stops.  
-The final output is: sbom-merged.json
+The final output is: 
+```bash
+sbom-merged.json
+```
 
 
 This file shows everything the program depends on, both before and during execution.
