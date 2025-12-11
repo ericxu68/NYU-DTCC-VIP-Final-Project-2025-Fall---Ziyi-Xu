@@ -34,7 +34,7 @@ I use Syft to scan the current directory and create a static SBOM.
 Command: 
 ```bash
 syft dir:. -o json > sbom-static.json
-
+```
 
 This gives me a list of all dependencies that already exist on disk before the program runs.
 
@@ -68,7 +68,7 @@ I use my Python script to merge the static SBOM and the dynamic list.
 Command:
 ```bash
 python3 merge_sbom.py sbom-static.json dynamic-libs.txt sbom-merged.json
-
+```
 
 The script loads the static SBOM, turns each dynamic library into a small SBOM entry, and adds all these entries to the final SBOM.
 
