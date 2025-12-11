@@ -7,7 +7,7 @@ In this project, I built a toolchain that can:
 2. Capture dynamic linked libraries that load during runtime
 3. Add those runtime libraries back into the SBOM
 
-Most SBOM tools, like Syft, only detect dependencies that exist on the filesystem. Many programs load extra shared libraries during execution. These dynamic libraries do not appear in a static SBOM, so the SBOM becomes incomplete.
+Most SBOM tools, such as Syft, only detect dependencies that exist on the file system. Many programs load extra shared libraries during execution. These dynamic libraries do not appear in a static SBOM, so the SBOM becomes incomplete.
 
 To solve this problem, I created a combined workflow that includes:
 
@@ -24,14 +24,15 @@ This process produces a runtime-aware SBOM. It shows both the static dependencie
 ### 1. I start the tool and set up the environment
 When I run the script, I pass a program or command to it. The script saves that command so I can run it later with strace.
 
-I also create an output folder and set the file names for everything I will generate. This keeps all logs and SBOM files in one place.
+I also create an output folder and set the file names for all the files I will generate. This keeps all logs and SBOM files in one place.
 
 ---
 
 ### 2. I generate the static SBOM using Syft
 I use Syft to scan the current directory and create a static SBOM.
 
-Command: syft dir:. -o json > sbom-static.json
+Command: ```bash
+syft dir:. -o json > sbom-static.json
 
 
 This gives me a list of all dependencies that already exist on disk before the program runs.
@@ -63,7 +64,8 @@ This becomes the list of all dynamic libraries that my program opened during exe
 ### 5. I merge dynamic libraries into the SBOM
 I use my Python script to merge the static SBOM and the dynamic list.
 
-Command: python3 merge_sbom.py sbom-static.json dynamic-libs.txt sbom-merged.json
+Command: ```bash
+python3 merge_sbom.py sbom-static.json dynamic-libs.txt sbom-merged.json
 
 
 The script loads the static SBOM, turns each dynamic library into a small SBOM entry, and adds all these entries to the final SBOM.
