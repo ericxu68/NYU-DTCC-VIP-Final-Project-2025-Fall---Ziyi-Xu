@@ -31,7 +31,8 @@ I also create an output folder and set the file names for all the files I will g
 ### 2. I generate the static SBOM using Syft
 I use Syft to scan the current directory and create a static SBOM.
 
-Command: ```bash
+Command: 
+```bash
 syft dir:. -o json > sbom-static.json
 
 
@@ -64,7 +65,8 @@ This becomes the list of all dynamic libraries that my program opened during exe
 ### 5. I merge dynamic libraries into the SBOM
 I use my Python script to merge the static SBOM and the dynamic list.
 
-Command: ```bash
+Command:
+```bash
 python3 merge_sbom.py sbom-static.json dynamic-libs.txt sbom-merged.json
 
 
